@@ -1,0 +1,11 @@
+<%= form_for @link do |f| %>
+<%= f.label :リンク名 %>
+<%= f.text_field :name %><br>
+<%= f.label :URL %>
+<%= f.text_field :url %><br>
+<%= f.label :内容 %>
+<%= f.text_field :text %><br>
+<%# f.label :tag %>
+ <%# f.collection_select :tag_name, @tags, :tag_mame %> 
+ <%=f.submit "追加する"%>
+<%end%>
