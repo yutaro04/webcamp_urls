@@ -1,5 +1,22 @@
-
-<% @links.each do |f| %>
+<head>
+<link rel="stylesheet" href="/assets/index.css"/>
+</head>
+<body>
+<div class="top">
+    リンク一覧
+</div>
+<div class="contents" >
+<% @links.each do |f|%>
+    <% if f.tag_id == 1 %>
+        <% judge = "hello" %>
+        <% elsif f.tag_id == 2 %>
+        <% judge = "hello1" %>
+        <% else %>
+        <% judge = "hello2" %>
+    <% end %>
+    <div class="<%= judge %>">
     <%= link_to f.name, "#{f.url}" %>
-    <%= f.text%>
+    <%= f.text%><br>
+    </div>
 <%end%>
+</body>

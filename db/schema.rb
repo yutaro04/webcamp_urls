@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_063337) do
+ActiveRecord::Schema.define(version: 2020_02_17_063253) do
 
   create_table "links", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,12 +19,27 @@ ActiveRecord::Schema.define(version: 2020_02_13_063337) do
     t.string "text"
     t.string "tag"
     t.string "name"
+    t.integer "tag_id"
+    t.integer "target_id"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "tag_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "target_links", force: :cascade do |t|
+    t.integer "link_id"
+    t.integer "target_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "targets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "target"
   end
 
 end

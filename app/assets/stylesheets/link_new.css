@@ -1,0 +1,35 @@
+.link_new{
+    height:60px;
+    background-color: rgba(115, 236, 206, 0.301);
+    padding-top:10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.link_create{
+    text-align: center;
+}
+
+.text{
+    font-size: 26px;
+}
+
+.link_box{
+    padding-top:60px;
+}
+
+.field{
+    margin-top:5px;
+    border-radius: 10px;
+    height:35px;
+    width:390px;
+    text-decoration: none;
+    border:1.5px solid rgb(35, 49, 66);
+    background:none;
+}
+.field:nth-child(3){
+    height:100px;
+}
+.contents{
+    background-color: rgb(255, 251, 244);
+}
