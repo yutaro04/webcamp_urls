@@ -1,5 +1,10 @@
 <head>
 <link rel="stylesheet" href="/assets/link_new.css"/>
+<script>
+    $(document).ready(function() {
+    $( ".target_serect2" ).select2({width: 'resolve'});
+    });
+</script>
 </head>
 <body>
 <div class="link_new">
@@ -17,12 +22,16 @@
     </div>
     <div class="link_box">
         <%= f.label :内容 , class: "text"%><br>
-        <%= f.text_field :text,class: "field" %>
+        <%= f.text_area :text,class: "field_big" %>
     </div>
     <div class="link_box">
-        <%=f.label :tag, class: "text" %><br>
-        <%= f.collection_select :tag_id, @tags, :id, :tag_name %>
+        <%=f.label :カテゴリー, class: "text" %><br>
+        <%= f.collection_select :tag_id, @tags, :id, :tag_name,class: "select form-control" %>
     </div>
+    <div class="link_box">
+        <%=f.label :対象者, class: "text" %><br>
+        <%= f.select :target_id, Target.all.map{|t| [t.target]}, { include_hidden: false }, { class: 'btn btn-default btn-lg dropdown-toggle target_serect2', multiple: true }%>
+    </div> 
 <%=f.submit "追加する"%>
 <%end%>
 <%= link_to "新しいタグを追加する",new_tag_path %>
