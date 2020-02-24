@@ -3,15 +3,7 @@
 </head>
 <body>
 <div class="top">
-    <div class="for">
-        対象者
-        <%= form_for @search, url: links_search_path ,method: :get,html: {class: "link_create"} do |f| %>
-        <div class="link_box">
-            <%# f.select :target_id, options_for_select(Target.all.map{|c| [c.target, c.id]}) , { }, {class: "tag_select2"} %>
-        </div>
-        <%=f.submit "絞り込み" ,class: "button"%>
-        <%end%>
-    </div>
+    
     リンク一覧
 </div>
 <div class="contents" >

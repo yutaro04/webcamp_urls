@@ -1,4 +1,4 @@
 class TargetLink < ApplicationRecord
-    belongs_to :target
     belongs_to :link
+    belongs_to :target
 end
