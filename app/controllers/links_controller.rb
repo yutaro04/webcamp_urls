@@ -17,10 +17,10 @@ class LinksController < ApplicationController
     def create
         link = Link.create(link_params)
         link.save
-        
-        
+        target_array = link_params[:target_id]
+        binding.pry
         params[:link][:target_links][:target_id].each do |f|
-            binding.pry
+           
             tcreate = TargetLink.create(target_id: [f],link_id: [link.id])
             tcreate.save
         end
