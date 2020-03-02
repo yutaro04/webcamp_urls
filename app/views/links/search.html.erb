@@ -16,7 +16,7 @@
         <div>対象者</div>
         <%= form_with url: links_search_path ,method: :get,local: true,class: "link_search" do |f| %>
         <div class="link_box2">
-            <%= f.select :target_id, options_for_select(Target.all.map{|c| [c.target, c.id]}) , { }, {class: "tag_select2"} %>
+            <%= f.select :target_id, options_for_select(Target.all.map{|c| [c.target, c.id]},{ :selected => @target }) , { }, {class: "tag_select2"} %>
         </div>
         <%=f.submit "絞り込み" ,class: "search_button"%>
         <%end%>

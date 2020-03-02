@@ -1,4 +1,5 @@
 class TargetLink < ApplicationRecord
-    belongs_to :target
+    validates :target_id, presence: true
     belongs_to :link
+    belongs_to :target
 end

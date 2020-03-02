@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-    has_many :links
+    validates :tag_name, presence: true
+    has_many :links , dependent: :destroy
 end

@@ -11,9 +11,12 @@
  * It is generally better to create a new file per style scope.
  *= require select2
  *= require select2-bootstrap
- *= require_self
+ *= require bootstrap-select 
  */
  @import "bootstrap"; 
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap-select';
+ @import 'nice-select'; // Or 'nice-select-prefixed'. See 'Notes' section.
 *{
     margin:0;
     padding:0;

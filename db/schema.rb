@@ -17,10 +17,8 @@ ActiveRecord::Schema.define(version: 2020_02_17_063253) do
     t.datetime "updated_at", null: false
     t.string "url"
     t.string "text"
-    t.string "tag"
     t.string "name"
     t.integer "tag_id"
-    t.integer "target_id"
   end
 
   create_table "tags", force: :cascade do |t|
