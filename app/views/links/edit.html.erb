@@ -35,14 +35,16 @@
         <p class="can_make">新たなカテゴリーを追加する際は<%= link_to "こちら",new_tag_path %>から追加できます。</p>
     </div>
     <div class="link_box_last">
-        <%=link_to "対象者",targets_path, class: "text" %><br>
-        <%= f.select :target_id, options_for_select(Target.all.map{|t| [t.target,t.id]}), { include_hidden: false }, { class: 'target_select2', multiple: true }%>
-        <p class="can_make">新たな対象者を追加する際は<%= link_to "こちら",new_target_path %>から追加できます。</p>
+        <%= f.fields_for :target_link do |c| %>
+            <%=link_to "対象者",targets_path, class: "text" %><br>
+            <%= c.select :target_id, options_for_select(Target.all.map{|t| [t.target,t.id]}), { include_hidden: false }, { class: 'target_select2', multiple: true }%>
+            <p class="can_make">新たな対象者を追加する際は<%= link_to "こちら",new_target_path %>から追加できます。</p>
+        <%end%>
     </div> 
-    <%=f.submit "追加する" ,class: "button"%>
+    <%=f.submit "編集する" ,class: "button"%>
     <%end%>
     <div class="back-box">
-        <%=link_to "もどる",links_path ,class: "back"%>
+        <%=link_to "もどる",root_path ,class: "back"%>
     </div>
 </div>
 </body>

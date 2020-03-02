@@ -1,15 +1,24 @@
 <head>
 <link rel="stylesheet" href="/assets/index.css"/>
+<script>
+    $(document).ready(function() {
+    $( ".target_select2" ).select2({width: 'resolve'});
+    $( ".tag_select2" ).select2({
+        width: 'resolve',
+        minimumResultsForSearch: -1
+        });
+    });
+</script>
 </head>
 <body>
 <div class="top">
     <div class="for">
-        対象者
-        <%= form_for @search, url: links_search_path ,method: :get,html: {class: "link_create"} do |f| %>
-        <div class="link_box">
-            <%# f.select :target_id, options_for_select(Target.all.map{|c| [c.target, c.id]}) , { }, {class: "tag_select2"} %>
+        <div>対象者</div>
+        <%= form_with url: links_search_path ,method: :get,local: true,class: "link_search" do |f| %>
+        <div class="link_box2">
+            <%= f.select :target_id, options_for_select(Target.all.map{|c| [c.target, c.id]}) , { }, {class: "tag_select2"} %>
         </div>
-        <%=f.submit "絞り込み" ,class: "button"%>
+        <%=f.submit "絞り込み" ,class: "search_button"%>
         <%end%>
     </div>
     リンク一覧
